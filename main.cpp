@@ -7,7 +7,7 @@
 using namespace std;
 
 
-rehber rehberMelih;
+rehber rehberMert;
 
 
 getMenu(){
@@ -34,7 +34,7 @@ addPerson(){
 	cout<<"Email giriniz:"<<endl;
 	cin>>email;
 	
-	rehberMelih.addPerson(name+" "+surname,number,email);
+	rehberMert.addPerson(name+" "+surname,number,email);
 	
 	cout<<"Kayit basarili."<<endl;
 	
@@ -45,15 +45,15 @@ editPerson(){
 	int index;
 	bool isFind=true;
 	
-	rehberMelih.printScreenRehber();
+	rehberMert.printScreenRehber();
 	cout<<"Duzenlemek istediginiz kisinin sayisini giriniz."<<endl;
 	cin>>index;
 	
 	system("CLS");
 	
-	while(!rehberMelih.kontrol(index))
+	while(!rehberMert.kontrol(index))
 	{
-		rehberMelih.printScreenRehber();
+		rehberMert.printScreenRehber();
 		cout<<"Duzenlemek istediginiz kisinin sayisini giriniz. Iptal etmek icin 200 giriniz."<<endl;
 		cin>>index;
 		
@@ -77,7 +77,7 @@ editPerson(){
 		cout<<"Email giriniz:"<<endl;
 		cin>>email;
 		
-		rehberMelih.editPerson(name+" "+surname,number,email,index);
+		rehberMert.editPerson(name+" "+surname,number,email,index);
 		
 		cout<<"Duzenleme basarili."<<endl;
 	}
@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
 		switch(index){
 			case 1:
 				system("CLS");
-				rehberMelih.printScreenRehber();
+				rehberMert.printScreenRehber();
 				cout<<"Geri donmek icin bir tusa basiniz. "<<endl;
 				getch();
 				break;
@@ -113,7 +113,7 @@ int main(int argc, char** argv) {
 				cout<<"Soyad giriniz:"<<endl;
 				cin>>surname;
 				
-				rehberMelih.printScreenPerson(name+" "+surname);
+				rehberMert.printScreenPerson(name+" "+surname);
 				cout<<"Geri donmek icin bir tusa basiniz. "<<endl;
 				
 				getch();
@@ -126,18 +126,18 @@ int main(int argc, char** argv) {
 				break;
 			case 5:
 				system("CLS");
-				rehberMelih.printScreenRehber();
+				rehberMert.printScreenRehber();
 
 				cout<<"Silmek için sayi gir"<<endl;
 				cin>>index;
 				
-				if(rehberMelih.delPerson(index))
+				if(rehberMert.delPerson(index))
 					cout<<"Basarili sekilde silindi.";
 				cout<<"\nGeri donmek icin bir tusa basiniz. "<<endl;
 				getch();
 				break;
 			case 6:
-				rehberMelih.saveRehber();
+				rehberMert.saveRehber();
 				cout<<"Geri donmek icin bir tusa basiniz. "<<endl;
 				break;
 			default:
